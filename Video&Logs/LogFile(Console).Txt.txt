@@ -1,0 +1,148 @@
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:7269
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5269
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\MA20250299\source\repos\Ajmera\Ajmera\
+info: Ajmera.Controllers.BookContoller[0]
+      GetAllBook - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (155ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+info: Ajmera.Services.BookService[0]
+      Service-GetBooks-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetAllBook - Completed
+info: Ajmera.Controllers.BookContoller[0]
+      AddBook - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (61ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?', @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO books (book_id, author_name, book_name, create_ts, update_ts)
+      VALUES (@p0, @p1, @p2, @p3, @p4);
+info: Ajmera.Services.BookService[0]
+      Service-AddBook-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      AddBook - Completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (9ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+info: Ajmera.Services.BookService[0]
+      Service-GetBookById-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+fail: Ajmera.Controllers.BookContoller[0]
+      GetBookById
+      System.InvalidOperationException: Sequence contains no elements.
+         at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+         at Ajmera.Repository.BookRepository.GetBookById(Guid bookId) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Repository\BookRepository.cs:line 36
+         at Ajmera.Services.BookService.GetBookById(Guid bookId) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Services\BookService.cs:line 61
+         at Ajmera.Controllers.BookContoller.GetBookById(Guid bookId) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Controllers\BookContoller.cs:line 113
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?', @p1='?', @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      UPDATE books SET author_name = @p0, book_name = @p1, create_ts = @p2, update_ts = @p3
+      WHERE book_id = @p4;
+info: Ajmera.Services.BookService[0]
+      Service-UpdateBook-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (9ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?', @p1='?', @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      UPDATE books SET author_name = @p0, book_name = @p1, create_ts = @p2, update_ts = @p3
+      WHERE book_id = @p4;
+info: Ajmera.Services.BookService[0]
+      Service-UpdateBook-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+fail: Ajmera.Controllers.BookContoller[0]
+      GetBookById
+      System.InvalidOperationException: Sequence contains no elements.
+         at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+         at Ajmera.Repository.BookRepository.GetBookById(Guid bookId) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Repository\BookRepository.cs:line 36
+         at Ajmera.Services.BookService.UpdateBook(BookDto book) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Services\BookService.cs:line 35
+         at Ajmera.Controllers.BookContoller.UpdateBook(BookDto book) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Controllers\BookContoller.cs:line 143
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      DELETE FROM books
+      WHERE book_id = @p0;
+info: Ajmera.Services.BookService[0]
+      Service-DeleteBookById-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetBookById - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__bookId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+      WHERE b.book_id = @__bookId_0
+      LIMIT 1
+fail: Ajmera.Controllers.BookContoller[0]
+      GetBookById
+      System.InvalidOperationException: Sequence contains no elements.
+         at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+         at Ajmera.Repository.BookRepository.GetBookById(Guid bookId) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Repository\BookRepository.cs:line 36
+         at Ajmera.Services.BookService.DeleteBookById(Guid bookId) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Services\BookService.cs:line 50
+         at Ajmera.Controllers.BookContoller.DeleteBookById(Guid book) in C:\Users\MA20250299\source\repos\Ajmera\Ajmera\Controllers\BookContoller.cs:line 60
+info: Ajmera.Controllers.BookContoller[0]
+      GetAllBook - Initiated
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT b.book_id, b.author_name, b.book_name, b.create_ts, b.update_ts
+      FROM books AS b
+info: Ajmera.Services.BookService[0]
+      Service-GetBooks-Executing completed
+info: Ajmera.Controllers.BookContoller[0]
+      GetAllBook - Completed
